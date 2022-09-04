@@ -3,8 +3,8 @@ const settings = {
   "state": {
     "frontity": {
       "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "title": "Bongjour Portfolio",
+      "description": "WordPress Developer"
     }
   },
   "packages": [
@@ -18,20 +18,20 @@ const settings = {
               "/"
             ],
             [
-              "Nature",
-              "/category/nature/"
+              "Product",
+              "/category/products-notice/"
             ],
             [
-              "Travel",
-              "/category/travel/"
+              "News",
+              "/category/news/"
             ],
+            // [
+            //   "Japan",
+            //   "/tag/japan/"
+            // ],
             [
-              "Japan",
-              "/tag/japan/"
-            ],
-            [
-              "About Us",
-              "/about-us/"
+              "Resume",
+              "/materials/"
             ]
           ],
           "featured": {
@@ -45,7 +45,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://classys.cn"
         }
       }
     },
