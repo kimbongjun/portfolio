@@ -18,12 +18,12 @@ const settings = {
               "/"
             ],
             [
-              "Product",
-              "/category/products-notice/"
+              "Nature",
+              "/category/nature/"
             ],
             [
-              "News",
-              "/category/news/"
+              "Travel",
+              "/category/travel/"
             ],
             // [
             //   "Japan",
@@ -31,7 +31,7 @@ const settings = {
             // ],
             [
               "Resume",
-              "/materials/"
+              "/resume/"
             ]
           ],
           "featured": {
@@ -45,7 +45,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://classys.cn"
+          "url": "https://test.frontity.org"
         }
       }
     },

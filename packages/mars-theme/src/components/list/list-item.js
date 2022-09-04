@@ -2,6 +2,7 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "../featured-media";
 
+
 /**
  * Item Component
  *
@@ -15,23 +16,24 @@ const Item = ({ state, item }) => {
   const date = new Date(item.date);
 
   return (
-    <article>
+    <Article>
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
 
       <div>
+
         {/* If the post has an author, we render a clickable author text. */}
-        {author && (
+        {/* {author && (
           <StyledLink link={author.link}>
             <AuthorName>
               By <b>{author.name}</b>
             </AuthorName>
           </StyledLink>
-        )}
+        )} */}
         <PublishDate>
           {" "}
-          on <b>{date.toDateString()}</b>
+          <b>{date.toDateString()}</b>
         </PublishDate>
       </div>
 
@@ -47,7 +49,7 @@ const Item = ({ state, item }) => {
       {item.excerpt && (
         <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
       )}
-    </article>
+    </Article>
   );
 };
 
@@ -62,7 +64,11 @@ const Title = styled.h1`
   padding-bottom: 8px;
   box-sizing: border-box;
 `;
-
+const Article = styled.article`
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+`
 const AuthorName = styled.span`
   color: rgba(12, 17, 43, 0.9);
   font-size: 0.9em;

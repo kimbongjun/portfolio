@@ -55,13 +55,13 @@ const Post = ({ state, actions, libraries }) => {
         {/* Hide author and date on pages */}
         {!data.isPage && (
           <div>
-            {author && (
+            {/* {author && (
               <StyledLink link={author.link}>
                 <Author>
                   By <b>{author.name}</b>
                 </Author>
               </StyledLink>
-            )}
+            )} */}
             <DateWrapper>
               {" "}
               on <b>{date.toDateString()}</b>
