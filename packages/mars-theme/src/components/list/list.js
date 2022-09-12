@@ -10,16 +10,18 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   return (
-    <Container fluid>
-      <Row>
-        {data.items.map(({ type, id }) => {
-          const item = state.source[type][id];
-          // Render one Item component for each one.
-          return <Item key={item.id} item={item} />;
-        })}
-        <Pagination />
-      </Row>
-    </Container>
+    <Section>
+      <Container fluid>
+        <Row>
+          {data.items.map(({ type, id }) => {
+            const item = state.source[type][id];
+            // Render one Item component for each one.
+            return <Item key={item.id} item={item} />;
+          })}
+          <Pagination />
+        </Row>
+      </Container>
+    </Section>
   );
 };
 
@@ -28,7 +30,7 @@ export default connect(List);
 const Section = styled.section`
   width: 800px;
   margin: 0;
-  padding: 24px;
+  // padding: 24px;
   list-style: none;
 `;
 

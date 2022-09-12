@@ -3,6 +3,8 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import List from "./list";
 import FeaturedMedia from "./featured-media";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
 /**
  * The Post component that Mars uses to render any kind of "post type", like
@@ -48,55 +50,67 @@ const Post = ({ state, actions, libraries }) => {
 
   // Load the post, but only if the data is ready.
   return data.isReady ? (
-    <Container>
-      <div>
-        <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+    <Article>
+      <Container fluid>
+        <Row>
+          <div className="col-12">
+            <Title dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
 
-        {/* Hide author and date on pages */}
-        {!data.isPage && (
-          <div>
-            {/* {author && (
+            {/* Hide author and date on pages */}
+            {!data.isPage && (
+              <div>
+                {/* {author && (
               <StyledLink link={author.link}>
                 <Author>
                   By <b>{author.name}</b>
                 </Author>
               </StyledLink>
             )} */}
-            <DateWrapper>
-              {" "}
-              on <b>{date.toDateString()}</b>
-            </DateWrapper>
+                <DateWrapper>
+                  {" "}
+                  on <b>{date.toDateString()}</b>
+                </DateWrapper>
+              </div>
+            )}
+
+
+            {/* Look at the settings to see if we should include the featured image */}
+            {state.theme.featured.showOnPost && (
+              <FeaturedMedia id={post.featured_media} />
+            )}
+
+            {data.isAttachment ? (
+              // If the post is an attachment, just render the description property,
+              // which already contains the thumbnail.
+              <div dangerouslySetInnerHTML={{ __html: post.description.rendered }} />
+            ) : (
+              // Render the content using the Html2React component so the HTML is
+              // processed by the processors we included in the
+              // libraries.html2react.processors array.
+              <Content>
+                <Html2React html={post.content.rendered} />
+              </Content>
+            )}
           </div>
-        )}
-      </div>
-
-      {/* Look at the settings to see if we should include the featured image */}
-      {state.theme.featured.showOnPost && (
-        <FeaturedMedia id={post.featured_media} />
-      )}
-
-      {data.isAttachment ? (
-        // If the post is an attachment, just render the description property,
-        // which already contains the thumbnail.
-        <div dangerouslySetInnerHTML={{ __html: post.description.rendered }} />
-      ) : (
-        // Render the content using the Html2React component so the HTML is
-        // processed by the processors we included in the
-        // libraries.html2react.processors array.
-        <Content>
-          <Html2React html={post.content.rendered} />
-        </Content>
-      )}
-    </Container>
+        </Row>
+      </Container>
+    </Article>
   ) : null;
 };
 
 export default connect(Post);
 
-const Container = styled.div`
+// const Container = styled.div`
+//   width: 800px;
+//   margin: 0;
+//   padding: 24px;
+// `;
+
+const Article = styled.section`
   width: 800px;
   margin: 0;
-  padding: 24px;
+  // padding: 24px;
+  list-style: none;
 `;
 
 const Title = styled.h1`

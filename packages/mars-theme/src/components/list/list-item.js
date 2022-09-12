@@ -16,7 +16,7 @@ const Item = ({ state, item }) => {
   const date = new Date(item.date);
 
   return (
-    <Article>
+    <article className="col-6">
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
@@ -49,7 +49,7 @@ const Item = ({ state, item }) => {
       {item.excerpt && (
         <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
       )}
-    </Article>
+    </article>
   );
 };
 

@@ -2,35 +2,52 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
 import MobileMenu from "./menu";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
 
 const Header = ({ state }) => {
   return (
-    <>
-      <Container>
-        <StyledLink link="/">
-          <Title>{state.frontity.title}</Title>
-        </StyledLink>
-        <Description>{state.frontity.description}</Description>
-        <MobileMenu />
+    <HeaderCon>
+      <Container fluid>
+        <Row>
+          <div className="col-12">
+            <StyledLink link="/">
+              <Title>{state.frontity.title}</Title>
+            </StyledLink>
+            <Description>{state.frontity.description}</Description>
+            <MobileMenu />
+            <Nav />
+          </div>
+        </Row>
       </Container>
-      <Nav />
-    </>
+    </HeaderCon>
   );
 };
 
 // Connect the Header component to get access to the `state` in it's `props`
 export default connect(Header);
 
-const Container = styled.div`
-  width: 848px;
+const HeaderCon = styled.header`
+  width: 800px;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 24px;
+  padding: 24px 0 0;
   color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-`;
+`
+// const Container = styled.div`
+//   width: 848px;
+//   max-width: 100%;
+//   box-sizing: border-box;
+//   padding: 24px;
+//   color: #fff;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-around;
+// `;
 
 const Title = styled.h2`
   margin: 0;
