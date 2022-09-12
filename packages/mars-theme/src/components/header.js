@@ -32,7 +32,7 @@ const HeaderCon = styled.header`
   width: 800px;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 24px 0 0;
+  padding: 24px 0;
   color: #fff;
   display: flex;
   flex-direction: column;

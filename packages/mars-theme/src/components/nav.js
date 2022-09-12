@@ -34,7 +34,7 @@ const NavContainer = styled.nav`
   max-width: 100%;
   box-sizing: border-box;
   padding: 24px 0 0;
-  margin: 0;
+  margin: 0 0 -24px;
   overflow-x: auto;
 
   @media screen and (max-width: 560px) {

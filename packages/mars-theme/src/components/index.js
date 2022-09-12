@@ -6,6 +6,8 @@ import Post from "./post";
 import Loading from "./loading";
 import Title from "./title";
 import PageError from "./page-error";
+import globalStyles from "../styles/global.css";
+
 
 /**
  * Theme is the root React component of our theme. The one we will export
@@ -59,18 +61,18 @@ const Theme = ({ state }) => {
 
 export default connect(Theme);
 
-const globalStyles = css`
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  a,
-  a:visited {
-    color: inherit;
-    text-decoration: none;
-  }
-`;
+// const globalStyles = css`
+//   body {
+//     margin: 0;
+//     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+//       "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//   }
+//   a,
+//   a:visited {
+//     color: inherit;
+//     text-decoration: none;
+//   }
+// `;
 
 const HeadContainer = styled.div`
   display: flex;

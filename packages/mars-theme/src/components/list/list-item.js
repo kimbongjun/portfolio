@@ -16,7 +16,7 @@ const Item = ({ state, item }) => {
   const date = new Date(item.date);
 
   return (
-    <article className="col-6">
+    <article className="col-md-6">
       <Link link={item.link}>
         <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
       </Link>
